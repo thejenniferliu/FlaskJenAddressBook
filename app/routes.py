@@ -24,7 +24,7 @@ def signup():
         if username == 'jenniferl':
             flash('That user arleady exists', 'danger')
             return redirect(url_for('signup'))
-        flash("Welcome. You're signed up!", 'success')
+        flash(f"Welcome {firstname} {lastname}, you're signed up!", 'success')
         return redirect(url_for('index'))
 
     return render_template('signup.html', form = form)

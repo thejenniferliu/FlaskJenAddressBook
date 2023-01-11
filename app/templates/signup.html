@@ -3,40 +3,45 @@
 {% block title %} Sign up {% endblock %}
 
 {% block content %}
-<form action ="" class = 'bg-light mt-10 p-5' method ="post">
-<h1 class = 'text-center'> Sign Up </h1>
+<div class="d-flex justify-content-around">
 
-{{ form.csrf_token }}
-<div class="mb-3 shadow p3 mb-4">
+    <img src="https://ih1.redbubble.net/image.1402060255.8096/st,small,507x507-pad,600x600,f8f8f8.jpg" class=".img-fluid. max-width: 100%" alt="Responsive image"></img>
 
-{{ form.firstname.label }} 
-{{ form.firstname(class ='form-control', placeholder ="Enter First Name")}}
-</div>
-<div class="mb-3 shadow p3 mb-4">
-{{ form.lastname.label }} 
-{{ form.lastname(class ='form-control', placeholder ="Enter Last Name")}}
-</div>
-<div class="mb-3 shadow p3 mb-4">
-{{ form.email.label }} 
-{{ form.email(class ='form-control', placeholder ="Enter Email")}}
-</div>
-<div class="mb-3 shadow p3 mb-4">
-{{ form.username.label }} 
-{{ form.username(class ='form-control', placeholder ="Enter Username")}}
-</div>
-<div class="mb-3 shadow p3 mb-4">
-{{ form.password.label }} 
-{{ form.password(class ='form-control', placeholder ="Enter Password")}}
-</div>
-<div class="mb-3 shadow p3 mb-4">
-{{ form.confirmpass.label }} 
-{{ form.confirmpass(class ='form-control', placeholder ="Confirm Password")}}
-</div>
-<div class="text-center mb-3 ">
-{{ form.submit(class ='btn btn-info w-50 mt-3') }}
-</div>
+<form action ="" class = 'bg-light mt-10 p-3' method ="post">
+    
+    <h1 class = 'text-center'> Sign Up </h1>
+    {{ form.csrf_token }}
+    
+    <div class="mb-3 shadow p3 mb-4">  
+    {{ form.firstname.label }} 
+    {{ form.firstname(class ='form-control', placeholder ="Enter First Name")}}
+    </div>
+    <div class="mb-3 shadow p3 mb-4">
+    {{ form.lastname.label }} 
+    {{ form.lastname(class ='form-control', placeholder ="Enter Last Name")}}
+    </div>
+    <div class="mb-3 shadow p3 mb-4">
+    {{ form.email.label }} 
+    {{ form.email(class ='form-control', placeholder ="Enter Email")}}
+    </div>
+    <div class="mb-3 shadow p3 mb-4">
+    {{ form.username.label }} 
+    {{ form.username(class ='form-control', placeholder ="Enter Username")}}
+    </div>
+    <div class="mb-3 shadow p3 mb-4">
+    {{ form.password.label }} 
+    {{ form.password(class ='form-control', placeholder ="Enter Password")}}
+    </div>
+    <div class="mb-3 shadow p3 mb-4">
+    {{ form.confirmpass.label }} 
+    {{ form.confirmpass(class ='form-control', placeholder ="Confirm Password")}}
+    </div>
+    <div class="text-center mb-3 ">
+    {{ form.submit(class ='btn btn-info w-50 mt-3') }}
+    </div>
 </form>
 
+</div>
 
 
 
