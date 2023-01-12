@@ -3,6 +3,7 @@ from app import app
 
 from flask import render_template, redirect, url_for, flash  
 from app.forms import SignUpForm
+from app.models import User
 
 @app.route('/')
 def index():
@@ -19,12 +20,17 @@ def signup():
         email = form.email.data
         username = form.username.data
         password = form.password.data
-        print(firstname, lastname, email, username, password)
+        print(firstname, lastname, email)
 
-        if username == 'jenniferl':
-            flash('That user arleady exists', 'danger')
+        check_user = User.query.filter( (User.username == username) | (User.email == email) ).all()
+
+        if check_user: 
+            flash('A user with that email and/or username already exists.', 'danger')
             return redirect(url_for('signup'))
-        flash(f"Welcome {firstname} {lastname}, you're signed up!", 'success')
+        new_user = User(firstname = firstname, lastname = lastname, email=email, username=username, password=password)
+    
+        flash(f'Thank you {new_user.username} for signing up!', 'success')
+
         return redirect(url_for('index'))
 
     return render_template('signup.html', form = form)
