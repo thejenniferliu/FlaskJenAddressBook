@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Sign up {% endblock %}
+
+{% block content %}
+<div class="justify-content-center mt-4">
+<form action ="" class = 'bg-light mt-9 p-3' method ="post">
+<h1 class = 'text-center'> Login </h1>
+
+{{ form.csrf_token }}
+
+<div class="mb-3 shadow p3 mb-4">  
+{{ form.username.label }} 
+{{ form.username(class ='form-control', placeholder ="Enter Username")}}
+</div>
+<div class="mb-3 shadow p3 mb-4">  
+{{ form.password.label }} 
+{{ form.password(class ='form-control', placeholder ="Enter Password")}}
+</div>
+
+<div class="text-center mb-3 ">
+    {{ form.submit(class ='btn btn-info w-50 mt-3') }}
+</div>
+</form>
+<img src="https://i.pinimg.com/originals/08/78/1e/08781e23707c1745c45d9e0d70e0ee61.jpg" class="rounded mx-auto d-block" alt="Responsive image"></img>
+</div>
+{% endblock %}
