@@ -4,7 +4,7 @@
 {% block content %}
 
 {% if current_user.is_authenticated %}
-    <h1 class = 'text-center'>Welcome Back, {{current_user.username }}</h1>
+    <h3 class = 'text-center mt-4 mb-4'>Take a peek, {{current_user.username }} :)</h3>
 {% endif %}
 
 
@@ -14,11 +14,11 @@
           {{ add.author.username }}
         </div>
         <div class="card-body">
-          <blockquote class="blockquote mb-0">
+          <blockquote class="blockquote mb-2">
             <p>{{ add.address }}</p>
             <footer class="blockquote-footer">{{ add.phone_number }} <cite title="Source Title"></cite></footer>
           </blockquote>
-          <a href="{{ url_for('get_address', address_id=add.id) }}" class="btn btn-info mt-3">See More</a>
+          <a href="{{ url_for('get_address', address_id=add.id) }}" class="btn btn-light mt-3">See More</a>
         </div>
       </div>
     {% endfor %}
