@@ -18,6 +18,7 @@
             <p>{{ add.address }}</p>
             <footer class="blockquote-footer">{{ add.phone_number }} <cite title="Source Title"></cite></footer>
           </blockquote>
+          <a href="{{ url_for('get_address', address_id=add.id) }}" class="btn btn-info mt-3">See More</a>
         </div>
       </div>
     {% endfor %}

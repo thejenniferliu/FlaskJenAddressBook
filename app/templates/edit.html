@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit {% endblock %}
+
+{% block content %}
+<form action ="" class = 'bg-light mt-3 p-5' method ="post">
+<h1 class = 'text-center'>Edit Your Address</h1>
+
+{{ form.csrf_token }}
+
+<div class="mb-3 shadow p3 mb-4">
+{{ form.firstname.label }} 
+{{ form.firstname(class ='form-control', value = addressp.firstname )}}
+</div>
+<div class="mb-3 shadow p3 mb-4">
+{{ form.lastname.label }} 
+{{ form.lastname(class ='form-control', value = addressp.lastname )}}
+</div>
+<div class="mb-3 shadow p3 mb-4">
+{{ form.address.label }} 
+{{ form.address(class ='form-control', value = addressp.address )}}
+</div>
+<div class="mb-3 shadow p3 mb-4">
+{{ form.phone_number.label }} 
+{{ form.phone_number(class ='form-control', value = addressp.phone_number)}}
+</div>
+
+<div class="text-center mb-3 ">
+{{ form.submit(class ='btn btn-info w-50 mt-3') }}
+</div>
+
+{% endblock %}

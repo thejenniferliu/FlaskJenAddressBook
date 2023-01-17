@@ -47,3 +47,13 @@ class Address(db.Model):
 
     def __repr__(self):
         return f"<Address {self.id} | {self.address}>"
+
+    def update(self, **kwargs):
+        for key, value in kwargs.items():
+            if key in {'firstname', 'lastname', 'address', 'phone_number'}:
+                setattr(self, key, value)
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
