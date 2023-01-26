@@ -28,7 +28,12 @@ class User(db.Model, UserMixin):
 
     def to_dict(self):
         return{
-            'user id': self.id,
+            'id': self.id,
+            'first name': self.firstname,
+            'last name': self.lastname,
+            'email': self.email,
+            'username': self.username,
+            'password': self.password
         }
 
 @login.user_loader

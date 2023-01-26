@@ -23,11 +23,16 @@ def create_user():
 
     data = request.json
 
-    for field in ['user id']:
+    for field in ['first name', 'last name', 'email', 'username', 'password']:
         if field not in data:
             return {'error'}, 400
     
-    user_id = data.get('user id')
+    firstname = data.get('first name')
+    lastname = data.get('last name')
+    email = data.get('email')
+    username = data.get('username')
+    password = data.get('password')
 
-    new_user = User(user_id = user_id)
+
+    new_user = User(firstname = firstname, lastname = lastname, email = email, username = username, password = password)
     return new_user.to_dict(), 201
